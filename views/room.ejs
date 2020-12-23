@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
    <meta charset="UTF-8">
+   <link rel="manifest" href="pwa.webmanifest">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Instant Meet</title>
    <script>
       const ROOM_ID = "<%= roomId %>"
       console.log(document.URL)
@@ -46,6 +47,8 @@
    </style>
 </head>
 <body>
+   <script src="sw.js"> </script>
+
    <div class="main">
     
          <div class="main__videos">
@@ -91,6 +94,19 @@
    </div>
 </body>
 </html>
+<script>
+   if ('serviceWorker' in navigator) {
+     navigator.serviceWorker
+       .register("sw.js", {scope: '/'})
+       .then(registration => {
+         console.log("ServiceWorker running");
+       })
+       .catch(err => {
+          console.log(err);
+       })
+   }
+
+</script>
 
 <script>
    // When the user clicks on div, open the popup

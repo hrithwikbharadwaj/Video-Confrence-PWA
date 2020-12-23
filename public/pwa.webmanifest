@@ -1,0 +1,16 @@
+{
+    "name": "Instant Video Meet",
+    "short_name": "Instant Meet",
+    "description": "This is an Progressive web application which helps to connect with different people instantly.",
+    "icons": [
+      {
+        "src": "splashscreen.png",
+        "sizes": "512x512",
+        "type": "image/png"
+      }
+    ],
+    "start_url": "/",
+    "display": "fullscreen",
+    "theme_color": "#764ABC",
+    "background_color": "#764ABC"
+  }

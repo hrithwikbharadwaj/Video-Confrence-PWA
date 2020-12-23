@@ -12,11 +12,15 @@ const peerServer = ExpressPeerServer(server, {
 const { v4: uuidV4 } = require('uuid')
 app.use(cors())
 app.use('/peerjs', peerServer);
-
+app.set('forceSSLOptions', {
+  enable301Redirects: false,
+  trustXFPHeader: false,
+  httpsPort: 443,
+});
 app.set('view engine', 'ejs')
 app.use(express.static('public'))
 
-app.get('/', (req, res) => {
+app.get('/',forceSSL, (req, res) => {
   res.redirect(`/${uuidV4()}`)
 })
 
