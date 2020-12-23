@@ -15,8 +15,12 @@ navigator.mediaDevices.getUserMedia({
   audio: true
 }).then(stream => {
   myVideoStream = stream;
+
+  // having muteed default - start
   setUnmuteButton();
   myVideoStream.getAudioTracks()[0].enabled = false;
+  // having muteed default - end
+
   addVideoStream(myVideo, stream)
   myPeer.on('call', call => {
     call.answer(stream)
@@ -53,7 +57,11 @@ socket.on('user-disconnected', userId => {
 myPeer.on('open', id => {
   socket.emit('join-room', ROOM_ID, id)
 })
-
+ function close_window() {
+    if (confirm("Are You Sure to leave this meeting ?")) {
+      window.close();
+    }
+  }
 function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
