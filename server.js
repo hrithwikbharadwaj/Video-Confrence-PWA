@@ -1,9 +1,11 @@
 const express = require('express')
 const app = express()
 var cors = require('cors')
+
 // const cors = require('cors')
 // app.use(cors())
 const server = require('http').Server(app)
+var forceSSL = require('express-force-ssl');
 const io = require('socket.io')(server)
 const { ExpressPeerServer } = require('peer');
 const peerServer = ExpressPeerServer(server, {
