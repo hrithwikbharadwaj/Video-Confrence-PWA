@@ -21,12 +21,27 @@
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
+         overflow: scroll;
+         flex-direction: column;
       }
       video{
          height: 300px;
          width: 400px;
          object-fit: cover;
-         padding: 8px;
+         padding-bottom: 20px;
+         overflow: scroll;
+        
+      }
+      @media (max-width: 800px) {
+         video{
+         
+            height: 50%;
+            width: 80%;
+            object-fit: cover;
+            padding-bottom: 20px;
+            margin-left: 10%;
+            overflow:  visible ;
+         }
       }
    </style>
 </head>
@@ -62,8 +77,10 @@
             <div class="main__controls__block">
                <div class="main__controls__button">
                   <a href="https://google.com">
+                  <div class="main__controls__button main__video_button">
+                     <span class="leave_meeting">Leave Meeting</span>
+                  </div>
                   
-                  <span class="leave_meeting">Leave Meeting</span>
                </a>
                </div>
             </div>

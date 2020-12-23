@@ -81,29 +81,25 @@
   overflow-y: auto;
 }
 
-.messages {
-  color: white;
-  list-style: none;
-}
-
-.main__message_container {
-  padding: 22px 12px;
-  display: flex;
-}
-
-.main__message_container input {
-  flex-grow: 1;
-  background-color: transparent;
-  border: none;
-  color: #f5f5f5;
+a:hover {
+  color: red;
 }
 
 .leave_meeting {
   padding: 20;
+  font-weight: bold;
   color: #eb534b;
 }
 
 .unmute,
 .stop {
   color: #cc3b33;
+}
+html {
+  min-height: 100%;
+  overflow-y: scroll;
+}
+body {
+  min-height: 100%;
+  background-color: black;
 }
