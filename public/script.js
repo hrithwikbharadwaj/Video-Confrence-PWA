@@ -15,11 +15,14 @@ navigator.mediaDevices.getUserMedia({
   audio: true
 }).then(stream => {
   myVideoStream = stream;
+  setUnmuteButton();
+  myVideoStream.getAudioTracks()[0].enabled = false;
   addVideoStream(myVideo, stream)
   myPeer.on('call', call => {
     call.answer(stream)
     const video = document.createElement('video')
     call.on('stream', userVideoStream => {
+      
       addVideoStream(video, userVideoStream)
     })
   })
