@@ -31,10 +31,10 @@
 
 .main__controls {
   width: 100%;
-  background-color: #03fc9d;
+  background-color: #4267b2;
   position: fixed;
   bottom: 0;
-  color: black;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -57,7 +57,7 @@
 }
 
 .main__controls__button:hover {
-  background-color: #44c292;
+  background-color: #9ea4af;
   border-radius: 5px;
 }
 
