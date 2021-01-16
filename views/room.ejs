@@ -16,13 +16,16 @@
    <script src="/socket.io/socket.io.js" defer></script>
    <link rel="stylesheet" href="style.css">
    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+   <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
    <script src="script.js" defer></script>
+   <script src="record.js" defer></script>
+   <script src="sharing.js" defer></script>
    <style>
       #video-grid{
          display: flex;
          justify-content: center;
          flex-wrap: wrap;
-         overflow: scroll;
+      
          
       }
       video{
@@ -30,7 +33,7 @@
          width: 400px;
          object-fit: cover;
          padding-bottom: 20px;
-         overflow: scroll;
+         
         
       }
       @media (max-width: 800px) {
@@ -58,7 +61,7 @@
    <div class="main">
          <div class="main__videos">
             <div id="video-grid">
-      
+              
             </div>
             
          </div>
@@ -79,6 +82,21 @@
                    Copy
                   </div>
                </div>
+            
+               <div onclick="screenShare()" class="main__controls__button start_record" id="startButton">
+                  <i class="fas fa-desktop"></i>
+                  <span style="font-size: 13px;">Screen Share</span>
+
+               </div>
+               <div class="main__controls__button start_record">
+                  <button id="record" >Start Recording</button>
+               </div>
+               <div class="main__controls__button start_record">
+                  <button id="download" disabled>Download Recording</button>
+               </div>
+               <div>
+                  <span id="errorMsg"></span>
+              </div>
             </div>
       
             
@@ -93,6 +111,8 @@
                </div>
             </div>
             </div>
+            
+    
       
  
       
@@ -208,4 +228,5 @@ font-family: "courier";
         from {opacity: 0;}
         to {opacity:1 ;}
       }
+  
       </style>

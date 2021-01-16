@@ -103,3 +103,8 @@ body {
   min-height: 100%;
   background-color: black;
 }
+@media screen and (max-width: 906px) {
+  .start_record {
+    visibility: hidden;
+  }
+}
